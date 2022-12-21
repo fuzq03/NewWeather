@@ -16,6 +16,7 @@
             android:id="@+id/search_image"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:src="@drawable/ic_baseline_search_24" />
 
@@ -23,22 +24,35 @@
         <EditText
             android:id="@+id/search_county_edit"
             android:layout_width="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
             android:layout_height="match_parent"
             android:layout_weight="8" />
 
-        <Button
-            android:id="@+id/btn_search"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:text="搜索" />
 
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/search_recycler"
+    <LinearLayout
+        android:id="@+id/searchRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="2">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_marginBottom="10dp">
+        <include layout="@layout/hot_city"/>
+    </LinearLayout>
+
+
+
+
 
 </LinearLayout>

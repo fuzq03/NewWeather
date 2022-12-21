@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Weather {
 
-    @SerializedName("updateTime")
+    @SerializedName("updateTimeFormat")
     public String updateTime;
 
     @SerializedName("city")

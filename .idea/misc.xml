@@ -3,16 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/drawable/1.xml" value="0.1225" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/drawable/btn_hotCity.xml" value="0.1305" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/drawable/btn_hot_city.xml" value="0.1225" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/drawable/hotCityBtn.xml" value="0.1305" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/drawable/ic_baseline_format_list_bulleted_24.xml" value="0.1305" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.1305" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1305" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1305" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/activity_main.xml" value="0.2217741935483871" />
         <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/forecast.xml" value="0.2526041666666667" />
         <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/forecast_item.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/fragment_search.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/hotCity.xml" value="0.2526041666666667" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/hot_city.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/hours.xml" value="0.2526041666666667" />
         <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/hours_item.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/more.xml" value="0.2526041666666667" />
         <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/now.xml" value="0.2526041666666667" />
         <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/search_item.xml" value="0.2526041666666667" />
         <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/layout/title.xml" value="0.2526041666666667" />
+        <entry key="..\:/AndroidStudioProjects/NewWeather/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1305" />
       </map>
     </option>
   </component>

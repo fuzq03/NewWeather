@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="15dp"
-    android:background="#8000">
+    android:background="#4000">
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,10 +26,10 @@
             android:layout_weight="1">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
+                android:layout_height="74dp"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/aqi_day_feelsLike_text"
@@ -37,14 +37,14 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="#fff"
-                    android:textSize="40sp"/>
+                    android:textSize="40sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="体感温度"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff" />
 
             </LinearLayout>
 
@@ -92,7 +92,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="74dp"
                 android:layout_centerInParent="true">
 
                 <TextView
@@ -101,14 +101,19 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="#fff"
-                    android:textSize="40sp"/>
+                    android:text="西南偏北风"
+                    android:textSize="30sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="center|bottom"
                     android:text="风向"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff" />
 
             </LinearLayout>
 

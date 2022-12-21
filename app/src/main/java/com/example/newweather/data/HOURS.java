@@ -7,7 +7,7 @@ public class HOURS {
     @SerializedName("time")
     public String time;
 
-    @SerializedName("wea")
+    @SerializedName("wea_img")
     public String wea;
 
     @SerializedName("tem")

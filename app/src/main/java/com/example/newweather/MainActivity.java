@@ -4,13 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView altimeterText;
     private RecyclerView forecastRecycler;
     private RecyclerView hoursRecycler;
+    //private RecyclerView searchRecyclerLayout;
+    //private LinearLayout hotCityLayout;
     private Button navButton;
 
     public DrawerLayout drawerLayout;
@@ -64,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         altimeterText = (TextView) findViewById(R.id.aqi_day_altimeter_text);
         forecastRecycler = (RecyclerView) findViewById(R.id.forecast_recycler);
         hoursRecycler = (RecyclerView) findViewById(R.id.hours_recycler);
+        //searchRecyclerLayout = (RecyclerView) findViewById(R.id.search_recycler);
+        //hotCityLayout = (LinearLayout) findViewById(R.id.hotCityView);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navButton = (Button) findViewById(R.id.nav_button);
@@ -120,10 +127,85 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public Weather getSearchCityWeatherByName(String name) {
+        String NowCityURL = "https://v0.yiketianqi.com/api/worldchina?appid=36979775&appsecret=Bx4ExaIj&aqi=1&city=" + name;
+        HttpUtil.sendOkHttpRequest(NowCityURL, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(MainActivity.this, "获取天气信息失败", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final String responseText = response.body().string();
+                Log.d("Here", responseText);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        drawerLayout.closeDrawers();
+                        Weather weather = new Gson().fromJson(responseText,Weather.class);
+                        Log.d("Here", "run: " + weather.CityName);
+                        Log.d("Here", "run: " + weather.day.aqi.air_tips);
+                        //传入设置页面的方法
+                        showWeatherContent(weather);
+                    }
+                });
+
+            }
+        });
+        return null;
+    }
+
+    public Weather getSearchCityWeatherById(String id) {
+        String NowCityURL = "https://v0.yiketianqi.com/api/worldchina?appid=36979775&appsecret=Bx4ExaIj&aqi=1&cityid=" + id;
+        HttpUtil.sendOkHttpRequest(NowCityURL, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(MainActivity.this, "获取天气信息失败", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final String responseText = response.body().string();
+                Log.d("Here", responseText);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        drawerLayout.closeDrawers();
+                        Weather weather = new Gson().fromJson(responseText,Weather.class);
+                        Log.d("Here", "run: " + weather.CityName);
+                        Log.d("Here", "run: " + weather.day.aqi.air_tips);
+                        //传入设置页面的方法
+                        showWeatherContent(weather);
+                    }
+                });
+
+            }
+        });
+        return null;
+    }
+
     public void showWeatherContent(Weather weather) {
+        drawerLayout.closeDrawers();
+        Log.d("Here", "cityname = " + weather.CityName);
         CityName.setText(weather.CityName);
+        Log.d("Here", "cityname = " + weather.day.temperature);
         NowTemText.setText(weather.day.temperature);
+        Log.d("Here", "cityname = " + weather.day.phrase);
         NowPhraseText.setText(weather.day.phrase);
+        Log.d("Here", "cityname = " + weather.updateTime);
         NowTimeText.setText(weather.updateTime);
         aqiTipsText.setText(weather.day.aqi.air_tips);
         feelsLikeText.setText(weather.day.feelsLike);
@@ -133,26 +215,31 @@ public class MainActivity extends AppCompatActivity {
         visibilityText.setText(weather.day.visibility);
         altimeterText.setText(weather.day.altimeter);
 
+        //recyclerViewLayout.addItemDecoration(new DividerItemDecoration(recyclerViewLayout.getContext(), linearLayoutManager.getOrientation()));
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         forecastAdapter adapter = new forecastAdapter(weather.monthList);
+        forecastRecycler.addItemDecoration(new DividerItemDecoration(forecastRecycler.getContext(), linearLayoutManager.getOrientation()));
         forecastRecycler.setAdapter(adapter);
         forecastRecycler.setLayoutManager(linearLayoutManager);
 
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this);
         HoursAdapter hoursAdapter = new HoursAdapter(weather.hoursList);
         linearLayoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
+        hoursRecycler.addItemDecoration(new DividerItemDecoration(hoursRecycler.getContext(), linearLayoutManager1.getOrientation()));
         hoursRecycler.setLayoutManager(linearLayoutManager1);
         hoursRecycler.setAdapter(hoursAdapter);
     }
 
     public void SearchForManyCityByEditText(String content, SearchAdapter searchAdapter) {
-        String countyIdURL = "https://geoapi.heweather.net/v2/city/lookup?location=" + content + "&key=b92646e0f4194731b50870798cfad1d0";
+        String countyIdURL = "https://geoapi.heweather.net/v2/city/lookup?location=" + content + "&range=cn&key=b92646e0f4194731b50870798cfad1d0";
         HttpUtil.sendOkHttpRequest(countyIdURL, new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 e.printStackTrace();
                 Toast.makeText(MyApplication.getContext(), "获取搜索信息失败", Toast.LENGTH_SHORT).show();
-
+                //searchRecyclerLayout.setVisibility(View.GONE);
+                //hotCityLayout.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -167,6 +254,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         //主线程！！！！
+                        //hotCityLayout.setVisibility(View.GONE);
+                        //searchRecyclerLayout.setVisibility(View.VISIBLE);
                         searchAdapter.notifyDataSetChanged();
                         Log.d("Here", "finish notifyDataSetChanged");
 
@@ -176,4 +265,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 }

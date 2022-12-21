@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hotCityView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#CDD8DB">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="热门城市："
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_location"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/ic_baseline_location_on_24" />
+"
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_beijing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="北京"
+            android:textSize="16dp"
+            android:background="@drawable/btn_hot_city" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_shanghai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上海"
+            android:textSize="16dp"
+            android:background="@drawable/btn_hot_city"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_shenzhen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="深圳"
+            android:textSize="16dp"
+            android:background="@drawable/btn_hot_city"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_guangzhou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="广州"
+            android:textSize="16dp"
+            android:background="@drawable/btn_hot_city" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_wuhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="武汉"
+            android:textSize="16dp"
+            android:background="@drawable/btn_hot_city"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_changsha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="长沙"
+            android:textSize="16dp"
+            android:background="@drawable/btn_hot_city"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_nanjing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="南京"
+            android:textSize="16dp"
+            android:background="@drawable/btn_hot_city" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_suzhou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="苏州"
+            android:textSize="16dp"
+            android:background="@drawable/btn_hot_city"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_xian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="西安"
+            android:textSize="16dp"
+            android:background="@drawable/btn_hot_city"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
